@@ -9,7 +9,7 @@ var atob = require('atob');
 
 program
   .version(pkg.version)
-  .usage('[options] <file ...>')
+  .usage('<file ...> [options]')
   .option('-i, --image [filename]', 'extract just the image')
   .option('-s, --sbagen [filename]', 'extract just the sbagen program')
   .option('-d, --desc [filename]', 'extract just the description text')
