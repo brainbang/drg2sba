@@ -6,44 +6,79 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="Drg2sba : Extract sbagen &amp; meta-files from idoser DRG files in javascript">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <style>
+    .btn-file {
+        position: relative;
+        overflow: hidden;
+    }
+    .btn-file input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+    }
+    </style>
 
-    <title>Drg2sba</title>
+    <title>drg2sba</title>
   </head>
 
   <body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/konsumer/drg2sba">View on GitHub</a>
-
-          <h1 id="project_title">Drg2sba</h1>
-          <h2 id="project_tagline">Extract sbagen &amp; meta-files from idoser DRG files in javascript</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/konsumer/drg2sba/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/konsumer/drg2sba/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
+  <div class="jumbotron">
+    <div class="container">
+      <h1>drg2sba</h1>
     </div>
+  </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p>DUMMY page, content coming soon.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Drg2sba maintained by <a href="https://github.com/konsumer">konsumer</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
+  <div id="content" class="container">
+    <p>Choose your DRG file to get the SBAGen-compatabile source of it.</p>
     
+    <span class="btn-file btn btn-lg btn-default ">
+      Choose DRG
+      <input onchange="handleFiles(this.files)" type="file">
+    </span>
+  </div>    
 
+  <script src="https://rawgit.com/konsumer/drg2sba/master/dist/drg2sba.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/yepnope/1.5.4/yepnope.min.js"></script>
+  <script>
+  yepnope([
+    {
+      test: window.atob,
+      nope: 'https://bitbucket.org/davidchambers/base64.js/raw/47ecaff13726/base64.min.js',
+    },
+    {
+      test: Modernizr.filereader,
+      nope: 'https://rawgit.com/MrSwitch/dropfile/master/dropfile.js',
+    }
+  ]);
+
+  function openFile(file){
+    var reader = new FileReader();
+    reader.onload = function(e){
+      var sba = drg2sba(atob(e.target.result.replace('data:;base64,','')).toString('binary'));
+      window.open('data:text/plain,' + encodeURIComponent('## ' + sba.title + '\n##\n## ' + sba.description.split('\n').join('\n## ') + '\n\n' + sba.sbagen));
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function handleFiles(files){
+    var l = files.length;
+    for (var i=0;i<l;i++){
+      openFile(files[i]);
+    }
+  }
+  </script>
   </body>
 </html>
