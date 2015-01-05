@@ -1,6 +1,6 @@
 {
   "name": "drg2sba",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Extract sbagen & meta-files from idoser DRG files in javascript",
   "author": "David Konsumer <konsumer@jetboystudio.com>",
   "main": "index.js",

@@ -1,5 +1,7 @@
 This program takes a .drg file from I-Doser and converts it to an .sbg SBaGen file.
 
+See it in action [here](http://konsumer.github.io/drg2sba).
+
 The authors of this project have nothing to do with I-Doser, I-Doser is a registered
 trademark.
 
