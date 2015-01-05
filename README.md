@@ -13,7 +13,6 @@ It should work on Windows, Mac, & Linux.
 
 *  Convert drg file into sbagen format
 *  Extract every part of the drg file (description, title, image, sbagen code)
-*  Create drg files
 
 
 ## Installation
