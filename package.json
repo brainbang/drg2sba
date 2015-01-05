@@ -4,7 +4,7 @@
   "description": "Extract sbagen & meta-files from idoser DRG files in javascript",
   "author": "David Konsumer <konsumer@jetboystudio.com>",
   "main": "index.js",
-  "keywords":[
+  "keywords": [
     "brainwave",
     "idoser",
     "sbagen",
@@ -26,10 +26,19 @@
   },
   "devDependencies": {
     "browserify": "^8.0.3",
+    "browserify-shim": "^3.8.2",
     "uglify-js": "^2.4.16"
   },
   "dependencies": {
     "atob": "^1.1.2",
     "commander": "^2.6.0"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "atob": "global:atob"
   }
 }
