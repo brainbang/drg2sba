@@ -3,7 +3,7 @@
  * totally ripped from https://github.com/manuel-arguelles/drg2sbg and converted to js
  */
 
-if (!atob) var atob = require('atob');
+var atob = require('atob');
 
 function drg_get_uncoded_data(data_encoded){
     // base64 decode to byte codes

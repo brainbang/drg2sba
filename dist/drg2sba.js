@@ -5,7 +5,7 @@
  * totally ripped from https://github.com/manuel-arguelles/drg2sbg and converted to js
  */
 
-if (!atob) var atob = (typeof window !== "undefined" ? window.atob : typeof global !== "undefined" ? global.atob : null);
+var atob = (typeof window !== "undefined" ? window.atob : typeof global !== "undefined" ? global.atob : null);
 
 function drg_get_uncoded_data(data_encoded){
     // base64 decode to byte codes
