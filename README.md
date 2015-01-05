@@ -1,5 +1,3 @@
-Extract sbagen & meta-fies from idoser DRG files in javascript!
-
 This program takes a .drg file from I-Doser and converts it to an .sbg SBaGen file.
 
 The authors of this project have nothing to do with I-Doser, I-Doser is a registered
