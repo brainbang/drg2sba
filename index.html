@@ -77,7 +77,7 @@
     var reader = new FileReader();
     reader.onload = function(e){
       var sba = drg2sba(atob(e.target.result.replace('data:;base64,','')).toString('binary'));
-      window.open('data:text/plain,' + encodeURIComponent('## ' + sba.title + '\n##\n## ' + sba.description.split('\n').join('\n## ') + '\n\n' + sba.sbagen));
+      document.location='data:text/plain,' + encodeURIComponent('## ' + sba.title + '\n##\n## ' + sba.description.split('\n').join('\n## ') + '\n\n' + sba.sbagen);
     };
     reader.readAsDataURL(file);
   }
