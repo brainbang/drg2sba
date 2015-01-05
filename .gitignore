@@ -1,6 +1,4 @@
 .DS_Store
 node_modules
 npm-debug.log
-drg/*.bmp
-drg/*.sba
-drg/*.txt
+drg
