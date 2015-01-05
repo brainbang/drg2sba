@@ -43,9 +43,9 @@ Extract all parts to filenames that match for very file in a directory:
 
 Which will make these files in that directory:
 
-Absinthe.bmp
-Absinthe.sba
-Absinthe.txt
+-  Absinthe.bmp
+-  Absinthe.sba
+-  Absinthe.txt
 
 
 ### browserify, CommonJS
