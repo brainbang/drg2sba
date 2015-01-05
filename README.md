@@ -3,9 +3,7 @@ This program takes a .drg file from I-Doser and converts it to an .sbg SBaGen fi
 The authors of this project have nothing to do with I-Doser, I-Doser is a registered
 trademark.
 
-This project does not supports piracy or any illegal action, the use of this product 
-must be strictly to pass .drg files to .sbg for later conversion to .wav or similar 
-portable format. It should work on Windows, Mac, & Linux.
+It should work on Windows, Mac, & Linux.
 
 ## Features
 
@@ -25,21 +23,21 @@ You can install this globally so `drg2sba` ends up in your path with this:  `npm
 
 You can get more info with `drg2sba --help`.
 
-Extract the description & title as comments in the sbagen file:
+#### Extract the description & title as comments in the sbagen file:
 
-`drg2sba Absinthe.drg`
+`drg2sba drg/Absinthe.drg`
 
-Extract the image:
+#### Extract the image:
 
-`drg2sba Absinthe.drg --image Absinthe.bmp`
+`drg2sba drg/Absinthe.drg --image Absinthe.bmp`
 
-Extract all the parts as separate files:
+#### Extract all the parts as separate files:
 
-`drg2sba Absinthe.drg -i Absinthe.png -s Absinthe.sba -d Absinthe.txt`
+`drg2sba drg/Absinthe.drg -i Absinthe.png -s Absinthe.sba -d Absinthe.txt`
 
-Extract all parts to filenames that match for very file in a directory:
+#### Extract all parts to filenames that match for very file in a directory:
 
-`drg2sba ~/Desktop/Dose\ Files/*.drg -i -s -d`
+`drg2sba drg/*.drg -i -s -d`
 
 Which will make these files in that directory:
 

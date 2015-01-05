@@ -21,33 +21,42 @@ if (!program.args.length){
   process.exit(1);
 }
 
-program.args.map(function(f){
-  var data = fs.readFileSync(f);
-  var sba = drg2sba(data.toString('binary'));
-  
-  if (!program.image && !program.sbagen && !program.desc){
-    console.log('## ' + sba.title + '\n##\n## ' + sba.description.split('\n').join('\n## ') + '\n\n' + sba.sbagen);
-  }else{
-    var name = path.basename(f, '.drg');
+program.args.forEach(function(f){
+  fs.readFile(f, function(err, data){
+    var fname = path.basename(f, '.drg');
 
-    if (program.image===true){
-      program.image = path.join(path.dirname(f), name + '.bmp');
+    if (err){
+      console.error(err);
+      process.exit(1);
     }
-    if (program.sbagen===true){
-      program.sbagen = path.join(path.dirname(f), name + '.sba');
+
+    var sba = drg2sba(data.toString('binary'));
+  
+    if (!program.image && !program.sbagen && !program.desc){
+      console.log('## ' + sba.title + '\n##\n## ' + sba.description.split('\n').join('\n## ') + '\n\n' + sba.sbagen);
+    }else{
+      if (program.image===true){
+        program.image = path.join(path.dirname(f), fname + '.bmp');
+      }
+      if (program.sbagen===true){
+        program.sbagen = path.join(path.dirname(f), fname + '.sba');
+      }
+      if (program.desc===true){
+        program.desc = path.join(path.dirname(f), fname + '.txt');
+      }
+      
+      if (program.image){
+        console.log('writing', program.image);
+        fs.writeFileSync(program.image, atob(sba.image));
+      }
+      if (program.sbagen){
+        console.log('writing', program.sbagen);
+        fs.writeFileSync(program.sbagen, sba.sbagen);
+      }
+      if (program.desc){
+        console.log('writing', program.desc);
+        fs.writeFileSync(program.desc, sba.description);
+      }
     }
-    if (program.desc===true){
-      program.desc = path.join(path.dirname(f), name + '.txt');
-    }
-    
-    if (program.image){
-      fs.writeFileSync(program.image, atob(sba.image));
-    }
-    if (program.sbagen){
-      fs.writeFileSync(program.sbagen, sba.sbagen);
-    }
-    if (program.desc){
-      fs.writeFileSync(program.desc, sba.description);
-    }
-  }
+  });
 });
