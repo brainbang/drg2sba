@@ -1,0 +1,28 @@
+{
+  "name": "drg2sba",
+  "version": "0.0.1",
+  "description": "Extract sbagen & meta-fies from idoser DRG files in javascript",
+  "author": "David Konsumer <konsumer@jetboystudio.com>",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/konsumer/drg2sba.git"
+  },
+  "bugs": {
+    "url": "http://github.com/konsumer/drg2sba/issues",
+    "email": "konsumer@jetboystudio.com"
+  },
+  "scripts": {
+    "start": "browserify . --standalone drg2sba -o dist/drg2sba.js && uglifyjs dist/drg2sba.js -o dist/drg2sba.min.js"
+  },
+  "bin": {
+    "drg2sba": "cli.js"
+  },
+  "devDependencies": {
+    "browserify": "^8.0.3",
+    "uglify-js": "^2.4.16"
+  },
+  "dependencies": {
+    "atob": "^1.1.2",
+    "commander": "^2.6.0"
+  }
+}
