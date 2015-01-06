@@ -1,6 +1,6 @@
 {
   "name": "drg2sba",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Extract sbagen & meta-files from idoser DRG files in javascript",
   "author": "David Konsumer <konsumer@jetboystudio.com>",
   "main": "index.js",
@@ -12,10 +12,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/konsumer/drg2sba.git"
+    "url": "http://github.com/brainbang/drg2sba.git"
   },
   "bugs": {
-    "url": "http://github.com/konsumer/drg2sba/issues",
+    "url": "http://github.com/brainbang/drg2sba/issues",
     "email": "konsumer@jetboystudio.com"
   },
   "scripts": {
