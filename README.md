@@ -1,6 +1,6 @@
 This program takes a .drg file from I-Doser and converts it to an .sbg SBaGen file.
 
-See it in action [here](http://konsumer.github.io/drg2sba).
+See it in action [here](http://brainbang.github.io/drg2sba).
 
 You can find some drg files to play with [here](https://github.com/brainbang/sbagen_idoser).
 
