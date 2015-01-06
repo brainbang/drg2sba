@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/drg2sba.svg)](http://badge.fury.io/js/drg2sba)
+
 This program takes a .drg file from I-Doser and converts it to an .sbg SBaGen file.
 
 See it in action [here](http://brainbang.github.io/drg2sba).
