@@ -68,7 +68,7 @@ define(['drg2sba', 'text!Absinthe.drg'], function(drg2sba, drg_file_contents){
 ### no-install regular browser-global
 
 ```html
-<script src="https://rawgit.com/konsumer/drg2sbg/master/dist/drg2sba.min.js"></script>
+<script src="https://rawgit.com/brainbang/drg2sbg/master/dist/drg2sba.min.js"></script>
 <script>
 var sba = drg2sba(drg_file_contents);
 </script>
