@@ -51,7 +51,7 @@ Which will make these files in that directory:
 -  Absinthe.txt
 
 
-### browserify, CommonJS
+### nodejs, browserify
 
 ```javascript
 var drg2sba = require('drg2sba');
