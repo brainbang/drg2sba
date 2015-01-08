@@ -1,8 +1,9 @@
 {
   "name": "drg2sba",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Extract sbagen & meta-files from idoser DRG files in javascript",
   "author": "David Konsumer <konsumer@jetboystudio.com>",
+  "license": "GPL2",
   "main": "index.js",
   "keywords": [
     "brainwave",
