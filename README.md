@@ -79,6 +79,3 @@ var sba = drg2sba(drg_file_contents);
 *  [drg2sbg in C](https://github.com/manuel-arguelles/drg2sbg)
 *  [Main Engine, the binaural generator](http://uazu.net/sbagen/)
 *  [The company who makes the .drg files](http://www.i-doser.com/)
-*  [The place to buy good .drg files](http://www.i-doser.com/store/)
-*  [The guys who made this possible](http://theidoserblog.blogspot.com/)
-*  [Useless blog](http://p4c0.wordpress.com/)
