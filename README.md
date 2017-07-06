@@ -38,9 +38,9 @@ You can get more info with `drg2sba --help`.
 
 `drg2sba drg/Absinthe.drg -i Absinthe.png -s Absinthe.sba -d Absinthe.txt`
 
-#### Extract all parts to filenames that match for very file in a directory:
+#### Extract all parts to filenames that match for every file in a directory:
 
-`drg2sba drg/*.drg -i -s -d`
+`drg2sba -i -s -d drg/*.drg`
 
 Which will make these files in that directory:
 
@@ -60,8 +60,7 @@ var sba = drg2sba(drg_file_contents);
 
 ```javascript
 define(['drg2sba', 'text!Absinthe.drg'], function(drg2sba, drg_file_contents){
-	var sba = drg2sba(drg_file_contents);
-
+  var sba = drg2sba(drg_file_contents);
 });
 ```
 
